@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Update Category Page</h1>
+    <div>
+        <form action="/modify" method="post">
+          <input type="hidden" value="<%= user.Category_Id %>" name="CategoryId">
+          <div>
+            <label for="CategoryId">Category_Id :</label>
+            <input type="text" class="form-control" id="CategoryId" value="<%= user.Category_Id %>" name="CategoryId" disabled >
+          </div>
+          <div>
+            <label for="CategoryName">Category_Name :</label>
+            <input type="text" class="form-control" id="CategoryName" placeholder="Enter Category" name="CategoryName" required>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+</body>
+</html>

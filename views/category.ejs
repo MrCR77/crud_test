@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .btn-edit{
+        background-color: rgb(70, 226, 31);
+    }
+    .btn-del {
+        background-color: crimson;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+    }
+</style>
+<body>
+    <h1>Category Page</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Category ID</th>
+                <th>Category Name</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <% users.map((value,index)=>{ %>
+                <tr>
+                    <td><%= value.Category_Id %></td>
+                    <td><a href="/category/<%= value.Category_Id %>"><%= value.Category_Name %></a></td>
+                    <td>
+                        <button class="btn-edit">
+                            <a href="/update/<%= value.Category_Id %> ">Edit</a>
+                        </button>
+                        <button class="btn-del">
+                            <a style="color: aliceblue;" href="/delete/<%= value.Category_Id %> ">Delete</a>
+                        </button>
+                    </td>
+                </tr> 
+               <% }) %>
+
+        </tbody>
+    </table>
+    <button>
+        <a href="/addCategory">Add Category</a>
+    </button>
+    <button><a href="/">Back to home</a></button>
+</body>
+</html>
