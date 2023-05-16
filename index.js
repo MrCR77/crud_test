@@ -138,8 +138,8 @@ app.get("/delete/:id", (req, res) => {
   
   app.get("/next/:no", (req, res) => {
     const no = req.params.no;
-    const pageSize = req.query.pageSize || 10; // default page size is 10
-    const page = req.query.page || no; // default page is 1
+    const pageSize = req.query.pageSize || 10;
+    const page = req.query.page || no; 
     const offset = (page - 1) * pageSize;
     const sql = `SELECT product.Product_ID, product.Product_Name, category.Category_Id, category.Category_Name
                  FROM product INNER JOIN category ON product.Category_Id = category.Category_Id
